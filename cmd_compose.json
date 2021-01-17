@@ -1,0 +1,20 @@
+[
+    {
+        "name": "node1",
+        "cmd": [
+            "node",
+            "index.js"
+        ],
+        "readyWhenLog": "\\d.times",
+        "readyTimeout": 5
+    },
+    {
+        "name": "node2",
+        "cmd": [
+            "node",
+            "index.js"
+        ],
+        "readyWhenLog": "3 times",
+        "readyTimeout": 5
+    }
+]
