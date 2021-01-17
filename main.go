@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	log.SetOutput(os.Stdout)
 	log.Printf("pid: %v\n", os.Getpid())
 
 	var filename string
