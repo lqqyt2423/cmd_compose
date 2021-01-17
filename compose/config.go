@@ -9,6 +9,7 @@ import (
 type CmdConfig struct {
 	Cmd          []string
 	Name         string
+	WorkDir      string
 	ReadyWhenLog string        // when log contain this, switch to ready
 	ReadyTimeout time.Duration // after this timeout, switch to ready
 }

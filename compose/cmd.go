@@ -47,6 +47,11 @@ func NewCmd(config *CmdConfig) *Cmd {
 func (c *Cmd) Start() error {
 	log.Printf("%v cmd.Start: %v\n", c.Config.Name, c.Config.Cmd)
 	cmd := exec.Command(c.Config.Cmd[0], c.Config.Cmd[1:]...)
+
+	if c.Config.WorkDir != "" {
+		cmd.Dir = c.Config.WorkDir
+	}
+
 	// don't send ctrl+c signal to child process
 	cmd.SysProcAttr = &syscall.SysProcAttr{
 		Setpgid: true,
